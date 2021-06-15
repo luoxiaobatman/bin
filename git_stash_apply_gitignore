@@ -1,0 +1,3 @@
+# session中去掉.gitconfig的filter
+# git stash apply 固定的name
+# 添加filter标签

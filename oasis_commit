@@ -1,0 +1,15 @@
+PS3="commit type: "
+select ITEM in fix add update style test docs perf refactor rollback revert build
+do
+    case $ITEM in
+    "fix"|"add"|"update"|"style"|"test"|"docs"|"perf"|"refactor"|"rollback"|"revert"|"build") 
+    ;;
+    *)
+        echo "非法操作"
+        exit -1
+    ;;
+    esac
+    break
+done
+read -p 'commit description(只能用中文): ';
+git commit -m "${ITEM}: ${REPLY}"
