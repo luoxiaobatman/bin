@@ -3,5 +3,7 @@
 # 添加filter标签
 git config --add filter.gitignore.clean ""
 git config --add filter.gitignore.smudge ""
+
+
 git config --add filter.gitignore.clean "sed '/#gitignore$/'d"
 git config --add filter.gitignore.smudge "cat"

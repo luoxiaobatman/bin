@@ -3,3 +3,4 @@
 #     sleep 600
 # done
 kill $(ps aux | grep express | grep expressvpnd | grep -v "0:00.00" | sed -E 's/root *([0-9]*) *.*/\1/g')
+
