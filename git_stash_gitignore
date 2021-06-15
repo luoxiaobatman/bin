@@ -1,9 +1,12 @@
 # session中去掉.gitconfig的filter
 # git stash到固定name
 # 添加filter标签
+# 假如working directory不是clean的, 不允许stash?
+
 git config --add filter.gitignore.clean ""
 git config --add filter.gitignore.smudge ""
-
-
+git rm --cached -r .
+git reset .
+git stash push -m "gitignore"
 git config --add filter.gitignore.clean "sed '/#gitignore$/'d"
 git config --add filter.gitignore.smudge "cat"
