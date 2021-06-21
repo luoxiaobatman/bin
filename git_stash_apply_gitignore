@@ -5,8 +5,6 @@
 
 git config --add filter.gitignore.clean ""
 git config --add filter.gitignore.smudge ""
-git rm --cached -r .
-git reset .
-git stash apply stash^{/gitignore}
+git stash apply stash@{$1}
 git config --add filter.gitignore.clean "sed '/#gitignore$/'d"
 git config --add filter.gitignore.smudge "cat"
